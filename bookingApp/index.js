@@ -17,6 +17,15 @@ form.addEventListener('submit', function (e) {
 
 });
 
+//delete user
+
+const deleteUser = (id)=>{
+axios.delete(`https://crudcrud.com/api/0088f909759e4857a0b41f8b73839265/appointment/${id}`)
+.then(res=>log("delete",res))
+.catch(err=>console.log('delete',err))
+}
+
+//show user
 const showData =(res)=>{
 const data = res.data
 const userList = document.getElementById('userList');
@@ -24,7 +33,8 @@ userList.innerHTML = '';
 
 data.forEach((user, index) => {
     const listItem = document.createElement('li');
-    listItem.innerHTML = `${user.name} - ${user.email} - ${user.mobile}`
+    listItem.innerHTML = `${user.name} - ${user.email} - ${user.mobile}
+                         <button onclick="deleteUser(${user._id})">Delete</button>`
                         
     userList.appendChild(listItem);
 })
