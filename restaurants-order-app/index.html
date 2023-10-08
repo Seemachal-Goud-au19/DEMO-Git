@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+</head>
+
+<body>
+    <h1>Restaurant Ordering App</h1>
+    <form id="myForm">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" required><br><br>
+
+        <label for="dish">Dish Name:</label>
+        <input type="text" id="dish" name="dish" required><br><br>
+
+        <label for="table">Table No:</label>
+        <input type="text" id="table" name="table" required><br><br>
+
+        <input type="submit" value="Add-Bill">
+    </form>
+ <!-- user List -->
+ <ul id="orderList"></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
